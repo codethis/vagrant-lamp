@@ -1,7 +1,6 @@
 include_recipe "apt"
 include_recipe "build-essential"
 include_recipe "git"
-include_recipe "oh-my-zsh"
 include_recipe "apache2"
 include_recipe "apache2::mod_rewrite"
 include_recipe "apache2::mod_ssl"
@@ -12,11 +11,9 @@ include_recipe "php::module_apc"
 include_recipe "php::module_curl"
 include_recipe "apache2::mod_php5"
 include_recipe "composer"
-include_recipe "phing"
-include_recipe "php-box"
 
 # Install packages
-%w{ debconf vim screen tmux mc subversion curl make g++ libsqlite3-dev graphviz libxml2-utils lynx links}.each do |a_package|
+%w{ debconf vim screen tmux mc curl make g++ libsqlite3-dev graphviz libxml2-utils lynx links}.each do |a_package|
   package a_package
 end
 
