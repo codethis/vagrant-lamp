@@ -26,10 +26,6 @@ DELETE FROM mysql.user WHERE User='';
 DROP DATABASE test;
 DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%';
 <% end -%>
-
-# Create dev database
-CREATE DATABASE dev;
-
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node['mysql']['server_root_password'] %>');
 
 # allow root to connect from a remote network if root_network_acl is not nil
