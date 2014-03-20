@@ -171,9 +171,9 @@ default['mysql']['tunable']['thread_cache_size']    = 8
 default['mysql']['tunable']['thread_concurrency']   = 10
 default['mysql']['tunable']['thread_stack']         = "256K"
 default['mysql']['tunable']['sort_buffer_size']     = "2M"
-default['mysql']['tunable']['read_buffer_size']     = "128k"
+default['mysql']['tunable']['read_buffer_size']     = "2M"
 default['mysql']['tunable']['read_rnd_buffer_size'] = "256k"
-default['mysql']['tunable']['join_buffer_size']     = "128k"
+default['mysql']['tunable']['join_buffer_size']     = "2M"
 default['mysql']['tunable']['wait_timeout']         = "180"
 default['mysql']['tunable']['open-files-limit']     = "1024"
 
@@ -202,7 +202,7 @@ default['mysql']['tunable']['log_queries_not_using_index']     = true
 default['mysql']['tunable']['log_bin_trust_function_creators'] = false
 
 default['mysql']['tunable']['innodb_log_file_size']            = "5M"
-default['mysql']['tunable']['innodb_buffer_pool_size']         = "128M"
+default['mysql']['tunable']['innodb_buffer_pool_size']         = "512M"
 default['mysql']['tunable']['innodb_buffer_pool_instances']    = "4"
 default['mysql']['tunable']['innodb_additional_mem_pool_size'] = "8M"
 default['mysql']['tunable']['innodb_data_file_path']           = "ibdata1:10M:autoextend"
@@ -229,8 +229,9 @@ default['mysql']['tunable']['skip-innodb-doublewrite']         = false
 
 default['mysql']['tunable']['transaction-isolation'] = nil
 
+default['mysql']['tunable']['query_cache_enabled']    = "1"
 default['mysql']['tunable']['query_cache_limit']    = "1M"
-default['mysql']['tunable']['query_cache_size']     = "16M"
+default['mysql']['tunable']['query_cache_size']     = "64M"
 
 default['mysql']['tunable']['log_slow_queries']     = "/var/log/mysql/slow.log"
 default['mysql']['tunable']['slow_query_log']       = node['mysql']['tunable']['log_slow_queries'] # log_slow_queries is deprecated
